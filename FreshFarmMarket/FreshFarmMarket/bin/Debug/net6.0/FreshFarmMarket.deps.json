@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FreshFarmMarket/1.0.0": {
+        "runtime": {
+          "FreshFarmMarket.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FreshFarmMarket/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

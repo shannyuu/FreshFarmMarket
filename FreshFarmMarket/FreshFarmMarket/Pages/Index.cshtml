@@ -1,10 +1,102 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Register";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div class="card mx-auto" style="max-width:700px; margin-top:40px;">
+    <article class="card-body">
+	<header class="mb-4"><h4 class="card-title">Sign up</h4></header>
+	<form>
+			<div class="form-group">
+
+				<label asp-for="MyUser.FullName"></label>
+				<input class="form-control" placeholder="Enter your full name" asp-for="MyUser.FullName">
+				<span asp-validation-for="MyUser.FullName" class="text-danger"></span>
+
+			</div> <!-- form-group end.// -->
+
+			<div class="form-row">
+
+				<div class="form-group ">
+					<label asp-for="MyUser.CreditCardNo"></label>
+					<input class="form-control" placeholder="Enter your credit card no. here" asp-for="MyUser.CreditCardNo">
+					<span asp-validation-for="MyUser.CreditCardNo" class="text-danger"></span>
+				</div> <!-- form-group end.// -->
+
+				<div class="form-group">
+
+					<div class="custom-control custom-radio custom-control-inline">
+						@Html.RadioButtonFor(m => m.MyUser.Gender, "M", new {@class = "form-check-input"})
+						<label class="form-check-label">Male</label>
+					</div>
+
+					<div class="custom-control custom-radio custom-control-inline">
+						@Html.RadioButtonFor(m => m.MyUser.Gender, "F", new {@class = "form-check-input"})
+						<label class="form-check-label">Female</label>
+					</div>
+					<span asp-validation-for="MyUser.Gender" class="text-danger"></span>
+				</div> <!-- form-group end.// -->
+
+			</div> <!-- form-row end.// -->
+
+			<div class="form-row">
+
+				<div class="col-md-6 form-group ">
+					<label asp-for="MyUser.MobileNo"></label>
+					<input class="form-control" placeholder="Enter your mobile no." asp-for="MyUser.MobileNo">
+					<span asp-validation-for="MyUser.MobileNo" class="text-danger"></span>
+				</div> <!-- form-group end.// -->
+
+				<div class="col-md-6 form-group ">
+					<label asp-for="MyUser.Email"></label>
+					<input class="form-control" placeholder="Enter your email" asp-for="MyUser.Email">
+					<span asp-validation-for="MyUser.Email" class="text-danger"></span>
+				</div> <!-- form-group end.// -->
+
+			</div> <!-- form-row end.// -->
+
+			<div class="form-group">
+
+				<label asp-for="MyUser.DeliveryAddress"></label>
+				<input class="form-control" placeholder="Enter your address" asp-for="MyUser.DeliveryAddress">
+				<span asp-validation-for="MyUser.DeliveryAddress" class="text-danger"></span>
+
+			</div> <!-- form-group.// -->
+
+			<div class="form-row">
+
+				<div class="form-group col-md-6">
+					<label asp-for="MyUser.Password">Password</label>
+					<input class="form-control" placeholder="Enter your password" asp-for="MyUser.Password">
+					<span asp-validation-for="MyUser.Password" class="text-danger"></span>
+				</div> <!-- form-group end.// --> 
+
+				<div class="form-group col-md-6">
+					<label asp-for="MyUser.ConfirmPassword">Re-enter password</label>
+					<input class="form-control" placeholder="Enter your password" asp-for="MyUser.ConfirmPassword">
+					<span asp-validation-for="MyUser.ConfirmPassword" class="text-danger"></span>
+				</div> <!-- form-group end.// -->  
+
+			</div>
+
+			<div class="form-group">
+
+				<label asp-for="MyUser.AboutMe"></label>
+				<input class="form-control" placeholder="Write something about yourself" asp-for="MyUser.AboutMe">
+				<span asp-validation-for="MyUser.AboutMe" class="text-danger"></span>
+
+			</div> <!-- form-group.// -->
+
+			<div class="form-group">
+			    <button type="submit" class="btn btn-primary btn-block"> Register  </button>
+			</div> <!-- form-group// -->      
+<!--			    <div class="form-group"> 
+		        <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""> <div class="custom-control-label"> I am agree with <a href="#">terms and contitions</a>  </div> </label>
+		    </div>  form-group end.// -->        
+				
+		</form>
+	</article><!-- card-body.// -->
+</div> <!-- card .// -->
+<p class="text-center mt-4">Have an account? <a href="#">Log In</a></p>
+<br><br>

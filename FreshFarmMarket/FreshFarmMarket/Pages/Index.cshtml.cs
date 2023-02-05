@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using FreshFarmMarket.Models;
 
 namespace FreshFarmMarket.Pages
 {
@@ -12,9 +13,19 @@ namespace FreshFarmMarket.Pages
             _logger = logger;
         }
 
+        public RegisterUser MyUser { get; set; } = new();
         public void OnGet()
         {
 
+        }
+        
+        public IActionResult OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+                return Redirect("/");
+            }
+            return Page();
         }
     }
 }
