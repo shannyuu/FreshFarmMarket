@@ -7,8 +7,8 @@ namespace FreshFarmMarket.Pages
 {
     public class RegisterModel : PageModel
     {
-        private UserManager<IdentityUser> userManager { get; }
-        private SignInManager<IdentityUser> signInManager { get; }
+        private UserManager<AppUser> userManager { get; }
+        private SignInManager<AppUser> signInManager { get; }
         private IWebHostEnvironment _environment;
 
 
@@ -17,7 +17,7 @@ namespace FreshFarmMarket.Pages
 
         [BindProperty]
         public IFormFile? Upload { get; set; }
-        public RegisterModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IWebHostEnvironment environment)
+        public RegisterModel(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IWebHostEnvironment environment)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -30,10 +30,21 @@ namespace FreshFarmMarket.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid) {
-                var user = new IdentityUser()
+                var user = new AppUser()
                 {
                     UserName = RModel.Email,
-                    Email = RModel.Email
+                    Email = RModel.Email,
+                    FullName = RModel.FullName,
+
+                    CreditCardNo = RModel.CreditCardNo,
+                    Gender = RModel.Gender,
+
+                    MobileNo = RModel.MobileNo,
+                    DeliveryAddress = RModel.DeliveryAddress,
+
+                    Photo = RModel.Photo,
+                    AboutMe = RModel.AboutMe
+
                 };
                 var result = await userManager.CreateAsync(user,RModel.Password);
                 if (result.Succeeded)

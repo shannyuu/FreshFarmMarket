@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FreshFarmMarket.Models
 {
-    public class AppUserDbContext:IdentityDbContext
+    public class AppUserDbContext:IdentityDbContext<AppUser>
     {
         private readonly IConfiguration _configuration;
         //public AppUserDbContext(DbContextOptions<AppUserDbContext> options):base(options){}

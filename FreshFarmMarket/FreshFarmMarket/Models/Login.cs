@@ -9,7 +9,7 @@ namespace FreshFarmMarket.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required, MinLength(3, ErrorMessage = "Name must be longer than 3 characters")]
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }

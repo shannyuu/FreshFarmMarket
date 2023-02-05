@@ -6,14 +6,21 @@ namespace FreshFarmMarket.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly IHttpContextAccessor contxt;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(IHttpContextAccessor httpContextAccessor)
         {
-            _logger = logger;
+            contxt = httpContextAccessor;
         }
         public void OnGet()
         {
+        }
+
+        public IActionResult Index()
+        {
+            contxt.HttpContext.Session.SetString("UserName", "user1");
+            contxt.HttpContext.Session.SetInt32("UserId", 50);
+            return Page();
         }
     }
 }

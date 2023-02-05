@@ -10,8 +10,8 @@ namespace FreshFarmMarket.Pages
         [BindProperty]
         public Login LModel { get; set; }
 
-        private readonly SignInManager<IdentityUser> signInManager;
-        public LoginModel(SignInManager<IdentityUser> signInManager)
+        private readonly SignInManager<AppUser> signInManager;
+        public LoginModel(SignInManager<AppUser> signInManager)
         {
             this.signInManager = signInManager;
         }

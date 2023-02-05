@@ -8,8 +8,8 @@ namespace FreshFarmMarket.Pages
 {
     public class LogoutModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> signInManager;
-        public LogoutModel(SignInManager<IdentityUser> signInManager)
+        private readonly SignInManager<AppUser> signInManager;
+        public LogoutModel(SignInManager<AppUser> signInManager)
         {
             this.signInManager = signInManager;
         }
