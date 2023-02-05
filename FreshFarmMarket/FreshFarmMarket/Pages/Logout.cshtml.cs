@@ -18,7 +18,7 @@ namespace FreshFarmMarket.Pages
         public async Task<IActionResult> OnPostLogoutAsync()
         {
             await signInManager.SignOutAsync();
-            return RedirectToPage("/User/Login");
+            return RedirectToPage("/Login");
         }
         public async Task<IActionResult> OnPostDontLogoutAsync()
         {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yfu5/busEikHSBdXzLU0R1s0gUrnTKgPKuASO+Qsz6E=",
+  "Hash": "UrIUMnj3s55eM/Q6eyYT9mRWH5LrKHlXlZVvmJmBbE4=",
   "Source": "FreshFarmMarket",
   "BasePath": "_content/FreshFarmMarket",
   "Mode": "Default",
@@ -1137,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\andre\\source\\repos\\shannyuu\\FreshFarmMarket\\FreshFarmMarket\\FreshFarmMarket\\wwwroot\\uploads\\user.jpg",
+      "SourceId": "FreshFarmMarket",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\andre\\source\\repos\\shannyuu\\FreshFarmMarket\\FreshFarmMarket\\FreshFarmMarket\\wwwroot\\",
+      "BasePath": "_content/FreshFarmMarket",
+      "RelativePath": "uploads/user.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\user.jpg"
     }
   ]
 }

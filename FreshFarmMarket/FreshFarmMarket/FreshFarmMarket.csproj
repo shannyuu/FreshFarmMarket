@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\User\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
 </Project>

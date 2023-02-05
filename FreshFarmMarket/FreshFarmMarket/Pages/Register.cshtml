@@ -71,6 +71,15 @@
 		</div>
 
 		<div class="form-group">
+			<div class="mb-3">
+				<input type="file" accept="image/jpg" asp-for="Upload" class="form-control" onchange="showImgPreview(this)" />
+				<span asp-validation-for="Upload" class="text-danger"></span>
+			</div>
+			<img id="imgPreview" class="rounded-circle" style="height:300px;width:300px;object-fit:cover"
+					src="/uploads/user.jpg" />
+		</div> <!-- form-group.// -->
+
+		<div class="form-group">
 			<label asp-for="RModel.AboutMe"></label>
 			<input class="form-control" placeholder="Write something about yourself" asp-for="RModel.AboutMe">
 			<span asp-validation-for="RModel.AboutMe" class="text-danger"></span>
@@ -86,3 +95,15 @@
 
 <p class="text-center mt-4">Have an account? <a href="/Login">Log In</a></p>
 <br><br>
+
+<script>
+    function showImgPreview(input) {
+        if (input.files[0]) {
+            var uploadimg = new FileReader();
+            uploadimg.onload = function(displayimg) {
+                $("#imgPreview").attr('src', displayimg.target.result);
+            }
+            uploadimg.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

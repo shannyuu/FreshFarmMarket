@@ -35,7 +35,7 @@ namespace FreshFarmMarket.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required, MinLength(3, ErrorMessage = "Name must be longer than 3 characters")]
+        [Required, RegularExpression("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.* ).{12,}$", ErrorMessage = "Password must contain at min. 12 characters\nLowercase\nUppercase\nNumbers\nSpecial characters.")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -46,10 +46,9 @@ namespace FreshFarmMarket.Models
         [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
 
-        //[MinLength(3, ErrorMessage = "Name must be longer than 3 characters")]
-        //[DataType(DataType.Upload)]
-        //[Display(Name = "Photo")]
-        //public string Photo { get; set; } = string.Empty;
+        [MaxLength(50)]
+        [Display(Name = "Photo")]
+        public string Photo { get; set; } = "/uploads/user.jpg";
 
         [Required, MinLength(3, ErrorMessage = "Name must be longer than 3 characters")]
         [Display(Name = "About Me")]
