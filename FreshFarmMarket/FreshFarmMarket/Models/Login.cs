@@ -2,7 +2,7 @@
 
 namespace FreshFarmMarket.Models
 {
-    public class LoginUser
+    public class Login
     {
         [Required]
         [DataType(DataType.EmailAddress)]
@@ -14,5 +14,6 @@ namespace FreshFarmMarket.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        public bool RememberMe { get; set; }
     }
 }

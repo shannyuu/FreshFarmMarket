@@ -1,20 +1,35 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using FreshFarmMarket.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace FreshFarmMarket.Pages
 {
     public class LoginModel : PageModel
     {
-        public LoginUser MyUser { get; set; } = new();
+        [BindProperty]
+        public Login LModel { get; set; }
 
+        private readonly SignInManager<IdentityUser> signInManager;
+        public LoginModel(SignInManager<IdentityUser> signInManager)
+        {
+            this.signInManager = signInManager;
+        }
         public void OnGet()
         {
         }
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid)
             {
-                return Redirect("/");
+                var identityResult = await signInManager.PasswordSignInAsync(LModel.Email, LModel.Password, LModel.RememberMe, false);
+                if (identityResult.Succeeded)
+                {
+                    TempData["FlashMessage.Type"] = "success";
+                    TempData["FlashMessage.Text"] = string.Format("Login successful");
+                    return RedirectToPage("Index");
+                }
+                ModelState.AddModelError("", "Email or Password incorrect");
             }
             return Page();
         }

@@ -2,8 +2,11 @@
 
 namespace FreshFarmMarket.Models
 {
-    public class RegisterUser
+    public class Register
     {
+        [Key]
+        public int ID { get; set; }
+
         [Required, MinLength(3, ErrorMessage = "Name must be longer than 3 characters")]
         [Display(Name = "Full Name")]
         public string FullName { get; set; } = string.Empty;
@@ -43,10 +46,10 @@ namespace FreshFarmMarket.Models
         [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
 
-        [Required, MinLength(3, ErrorMessage = "Name must be longer than 3 characters")]
-        [DataType(DataType.Upload)]
-        [Display(Name = "Photo")]
-        public string Photo { get; set; } = string.Empty;
+        //[MinLength(3, ErrorMessage = "Name must be longer than 3 characters")]
+        //[DataType(DataType.Upload)]
+        //[Display(Name = "Photo")]
+        //public string Photo { get; set; } = string.Empty;
 
         [Required, MinLength(3, ErrorMessage = "Name must be longer than 3 characters")]
         [Display(Name = "About Me")]

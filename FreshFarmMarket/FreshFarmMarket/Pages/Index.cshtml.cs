@@ -12,20 +12,8 @@ namespace FreshFarmMarket.Pages
         {
             _logger = logger;
         }
-
-        public RegisterUser MyUser { get; set; } = new();
         public void OnGet()
         {
-
-        }
-        
-        public IActionResult OnPost()
-        {
-            if (ModelState.IsValid)
-            {
-                return Redirect("/");
-            }
-            return Page();
         }
     }
 }
