@@ -1,4 +1,6 @@
 ﻿@page
+@using AspNetCore.ReCaptcha
+
 @model FreshFarmMarket.Pages.RegisterModel
 @{
     ViewData["Title"] = "Register";
@@ -72,8 +74,12 @@
 
 		<div class="form-group">
 			<div class="mb-3">
-				<input type="file" accept="image/jpg" asp-for="Upload" class="form-control" onchange="showImgPreview(this)" />
-				<span asp-validation-for="Upload" class="text-danger"></span>
+				<input type="file" accept="image/*" asp-for="Upload"
+				class="form-control" onchange="showImgPreview(this)" /><br />
+				 <img id="imgPreview" class="rounded-circle"
+				style="height:300px;width:300px;object-fit:cover"
+				 src="@Model.RModel.Photo" onerror="this.src='/uploads/user.png'" />
+				 <input class="form-control d-none" asp-for="RModel.Photo" />			
 			</div>
 			<img id="imgPreview" class="rounded-circle" style="height:300px;width:300px;object-fit:cover"
 					src="/uploads/user.jpg" />
@@ -87,7 +93,9 @@
 
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary btn-block"> Register  </button>
-		</div> <!-- form-group// -->      				
+		</div> <!-- form-group// -->    
+		<recaptcha />
+
 	</form>
 
 	</article><!-- card-body.// -->

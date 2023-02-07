@@ -28,6 +28,11 @@ namespace FreshFarmMarket.Models
         [Display(Name = "Delivery Address")]
         public string DeliveryAddress { get; set; } = string.Empty;
 
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
         [MaxLength(50)]
         [Display(Name = "Photo")]
         public string Photo { get; set; } = "/uploads/user.jpg";

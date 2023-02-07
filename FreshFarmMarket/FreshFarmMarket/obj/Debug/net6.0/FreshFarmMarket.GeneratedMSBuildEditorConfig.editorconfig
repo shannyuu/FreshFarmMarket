@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMarket
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/andre/source/repos/shannyuu/FreshFarmMarket/FreshFarmMarket/FreshFarmMarket/Pages/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjZXNzRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/source/repos/shannyuu/FreshFarmMarket/FreshFarmMarket/FreshFarmMarket/Pages/custom404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcY3VzdG9tNDA0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/andre/source/repos/shannyuu/FreshFarmMarket/FreshFarmMarket/FreshFarmMarket/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

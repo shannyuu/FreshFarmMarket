@@ -81,3 +81,7 @@ C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMa
 C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMarket\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMarket\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMarket\obj\Debug\net6.0\FreshFarmMarket.csproj.CopyComplete
+C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMarket\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMarket\obj\Debug\net6.0\FreshFarmMarket.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMarket\bin\Debug\net6.0\AspNetCore.ReCaptcha.dll
+C:\Users\andre\source\repos\shannyuu\FreshFarmMarket\FreshFarmMarket\FreshFarmMarket\bin\Debug\net6.0\nl\AspNetCore.ReCaptcha.resources.dll

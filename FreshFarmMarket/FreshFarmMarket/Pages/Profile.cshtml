@@ -1,1 +1,88 @@
-﻿
+﻿@page
+@using Microsoft.AspNetCore.Identity;
+@using FreshFarmMarket.Models;
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@model FreshFarmMarket.Pages.ProfileModel
+@{
+    ViewData["Title"] = "Profile";
+}
+<body>
+@if (SignInManager.IsSignedIn(User))    
+{
+    var user = await UserManager.GetUserAsync(User);
+
+    <div class="card mx-auto" style="max-width:700px; margin-top:40px;">
+    <article class="card-body">
+	<header class="mb-4"><h4 class="card-title">@ViewData["Title"]</h4></header>
+                    <img id="imgPreview" class="rounded-circle"
+                    style="height:150px;width:150px;object-fit:cover"
+                    src="@(string.IsNullOrEmpty(user.Photo) ?
+                    "/uploads/user.png" : user.Photo)"
+                    onerror="this.src='/uploads/user.jpg'" />
+                    <input class="form-control d-none" asp-for="@user.Photo" />
+        <h5 class="card-title">@(user != null ? @user.FullName : ""!)</h5> 
+        <p>Credit Card No.: @(user != null ? @user.CreditCardNo : ""!)</p> 
+        <p>Gender: @if (user.Gender == "F")
+                        {
+                        <span>Female</span>
+                        }
+                        else
+                        {
+                        <span>Male</span>
+                        }</p> 
+        <p>Mobile No.: @(user != null ? @user.MobileNo : ""!)</p> 
+        <p>Delivery Address: @(user != null ? user.DeliveryAddress : ""!)</p> 
+        <p>Email: @(user != null ? user.Email : ""!)</p> 
+        <p>About Me: @(user != null ? @user.AboutMe : ""!)</p> 
+
+    </article><!-- card-body.// -->
+    </div> <!-- card .// -->
+}    
+</body>
+
+@*
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <img id="imgPreview" class="rounded-circle"
+                    style="height:150px;width:150px;object-fit:cover"
+                    src="@(string.IsNullOrEmpty(user.Photo) ?
+                    "/uploads/user.png" : user.Photo)"
+                    onerror="this.src='/uploads/user.jpg'" />
+                    <input class="form-control d-none" asp-for="@user.Photo" />
+
+                    <p>Full Name: @(user != null ? @user.FullName : ""!)</p>
+
+                    <div>About Me: @(user != null ? @user.AboutMe : ""!)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h4>More details</h4>
+                    <p>Gender: 
+                        @if (user.Gender == "F")
+                        {
+                        <span>Female</span>
+                        }
+                        else
+                        {
+                        <span>Male</span>
+                        }
+                    </p>
+
+                    <p>Credit Card Number: @(user != null ? @user.CreditCardNo : ""!)</p>
+                    <p>Mobile Number: @(user != null ? @user.MobileNo : ""!)</p>
+                    <p>Deliver Address: @(user != null ? user.DeliveryAddress : ""!)</p>
+                    <p>Email Address: @(user != null ? user.Email : ""!)</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+*@
